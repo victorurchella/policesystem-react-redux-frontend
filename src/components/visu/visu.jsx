@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Menu from '../templates/menu/menu';
 import CurrencyInput from 'react-currency-input-field';
+import { Link } from 'react-router-dom';
 
 import api from '../../services/api.service'
 import { useParams } from 'react-router-dom'
@@ -67,7 +68,9 @@ const Visu = () => {
 
                 </Form>
 
-                <a href='/home'><Botao>Retornar a listagem</Botao></a>
+                <Link to='/home'>
+                    <Botao>Retornar a listagem</Botao>
+                </Link>
 
             </Backg>
         </div>

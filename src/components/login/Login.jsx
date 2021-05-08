@@ -1,33 +1,29 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link  } from 'react-router-dom';
 import { Container, Tittle, Form, Botao } from './styles';
 
 import { useSelector, useDispatch } from 'react-redux';
-import altAuth, { selectors } from '../../store/ducks/toAuth'
 
 import { allUsers } from '../../store/fetchActions';
 
 const UserLogin = () => {
 
   const [ login, setLogin ] = useState({});
-  const [ authed , setAuthed ] = useState(false);
 
   const dispatch = useDispatch()
   const users = useSelector(state => state.users)
-  const authState = useSelector(state => selectors.selectAuthState(state))
 
   useEffect( () => {
     dispatch(allUsers());
 
     users.forEach(function(obj) {
       if ( obj.nome == login.nome && obj.senha == login.senha) {
-        setAuthed(true)
+        sessionStorage.setItem('@policesystem/authed', true);
+        sessionStorage.setItem('@policesystem/nome', login.nome);
     }})
 
-    console.log(login)
-
   },
-  [users, authState, dispatch]);
+  [users, dispatch]);
 
   function changeLogin(e) {
     const {name, value} = e.target
@@ -60,9 +56,8 @@ const UserLogin = () => {
 
         </Form>
 
-        <Link to='/home'> <Botao onClick={() => dispatch(altAuth(login, authed))}>Entrar</Botao> </Link>
-
-
+        <Link to='/home'><Botao>Entrar</Botao></Link>
+        
       </Container>
     </div>
   )

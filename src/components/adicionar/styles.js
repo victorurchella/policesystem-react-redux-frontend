@@ -92,15 +92,16 @@ export const Form = styled.form`
 
     #desc {
         width: 775px;
-        height: 120px;
+        height: 110px;
         font-size: 15px;
     }
 
     #btn {
         width: 775px;
-        height: 35px;
+        height: 50px;
         background-color: #011024;
 
+        margin: -15px 0 0 0;
 
         color: #f4f4f4;
 
@@ -108,7 +109,7 @@ export const Form = styled.form`
         border-radius: 5px;
 
         font-weight: bold;
-        font-size: 22px;
+        font-size: 24px;
 
         transition: all 0.3s ease-in-out;
     }

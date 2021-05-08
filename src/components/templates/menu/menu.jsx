@@ -1,19 +1,28 @@
 import React from 'react';
 import { Menu, AsideMenu } from './styles';
-import { useSelector, useDispatch } from 'react-redux';
-import altAuth, { selectors } from '../../../store/ducks/toAuth'
 import { Link } from 'react-router-dom';
+import logoutIco from '../../../res/images/account-logout-3x.png'
 
 const sMenu = () => {
-
-  const authState = useSelector(state => selectors.selectAuthState(state))
 
   return(
     <div>
       <Menu>
 
-        <span className="header-apresentation">Consulta ao Código Penal</span>
-        <span className="header-user">Oficial. {authState.activeLogin.nome}</span>
+        <a href='/home'><span className="header-apresentation">Consulta ao Código Penal</span></a>
+
+        <span className="header-user">Oficial. {sessionStorage.getItem('@policesystem/nome')}</span>
+        <Link to='/login'>
+          <button
+          type='button'
+          id='logoutBtn'
+          onClick={() => {sessionStorage.removeItem('@policesystem/authed')}}
+          >
+
+          <img src={logoutIco} alt="OPA NAO CARREGOU NÉ" />
+
+          </button>
+        </Link>
 
       </Menu>
 
@@ -28,7 +37,7 @@ const sMenu = () => {
           <span />
 
           <ul id="menu">
-            <li><a href="/home">Listagem</a></li>
+            <li><a href="/home">Códigos</a></li>
             <li><a href="/adicionar">Adicionar</a></li>
           </ul>
         </div>

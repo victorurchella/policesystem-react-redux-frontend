@@ -13,13 +13,28 @@ export const Menu = styled.header`
 
     user-select: none;
 
+    a {
+        text-decoration: none;
+    }
+
+    #logoutBtn {
+        width: 40px;
+        height: 40px;
+
+        border: none;
+        border-radius: 40px;
+
+        margin-left: 2.5vw;
+    }
+
     .header-apresentation {
         font-family: Arial, Helvetica, sans-serif;
         font-size: 25px;
         font-weight: bold;
         color: #f5f5f5;
 
-        margin-left: 1.5vw;
+        text-decoration: none;
+        margin-left: 6.7vw;
 
         transition: color 0.2s ease
     }
@@ -30,7 +45,7 @@ export const Menu = styled.header`
         font-weight: bold;
         color: #f5f5f5;
 
-        margin-left: 60vw;
+        margin-left: 57.5vw;
 
         transition: color 0.2s ease
     }

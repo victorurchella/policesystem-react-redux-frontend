@@ -17,8 +17,14 @@ React, Redux, Axios
 - [x] Visualização
 - [x] Remoção
 
-## Erros
-### 07/05 - 1º Commit => 
+## Issues / Updates
+### 08/05 - 02:30 - 2º Commit => 
+Erro de autenticação corrigido e troca de paginas corrigido;                                                                    
+Adicionado botão de Logout;                                                                                                           
+Redirect's corrigidos;                                                                                             
+Removido Case Sensitive no campo de buscas da listagem
+
+### 07/05 - 23:30 - 1º Commit => 
 Autenticação feita por state do redux, logo quando atualiza a pagina desloga, e paginas que atualizam a pagina para carregar como por exemplo a de adicionar, acabam não funcionando, pois você é redirecionado para tela de login novamente.
 ###### Para conseguir visualizar a tela de adicionar codigo penal acesse : /src/routes -> lá altere o "isAuth" da linha 17 para "true", constando como se tivesse com login autenticado.
 
