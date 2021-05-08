@@ -14,7 +14,7 @@ function PrivateRoute({ component: Component, ...rest }){
 
   return (
     <Route { ...rest } render={props => (
-      isAuth ? (
+      true ? (
         <Component { ...props } />
       ) : (
         <Redirect from='*' to={{ pathname: '/login' }} />
@@ -32,6 +32,7 @@ const Routes = () => (
       <PrivateRoute path="/adicionar" component={Adicionar} />
       <PrivateRoute path="/editar/:id" component={Editar} />
       <PrivateRoute path="/visualizar/:id" component={Visualizar} />
+      <Redirect from='*' to='/login'/>
     </Switch>
   </BrowserRouter>
 );

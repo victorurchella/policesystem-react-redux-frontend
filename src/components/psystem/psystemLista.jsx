@@ -29,7 +29,7 @@ const Lista = () => {
   [search]);
 
   const filtro = cp.filter(function(obj){
-    return ( obj.nome.startsWith(search) )
+    return ( obj.nome.toLowerCase().startsWith(search.toLowerCase()) )
   })
 
   return (

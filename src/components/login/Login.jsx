@@ -24,6 +24,8 @@ const UserLogin = () => {
         setAuthed(true)
     }})
 
+    console.log(login)
+
   },
   [users, authState, dispatch]);
 

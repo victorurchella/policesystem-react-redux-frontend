@@ -8,9 +8,7 @@ export default (props) => (
   <PageHeader className="page-header">
     <h2>
       {props.name}
-      {' '}
       <small>{props.small}</small>
-      {' '}
     </h2>
   </PageHeader>
 );
